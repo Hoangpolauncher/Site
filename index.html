@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="main.css">
+  <script src="https://kit.fontawesome.com/7bd9343660.js" crossorigin="anonymous"></script>
+  <title>Site</title>
+</head>
+<body>
+  <div class="background"></div>
+  <div class="hotbar">
+    <div class="hotbar-text" onclick="location.reload()">HoanKYAK</div>
+    <div class="menu-bar" onclick="an()"><i class="fa-solid fa-bars"></i></div>
+    <div id="menu-all" class="hidden">
+      <div style="border-top: 2px solid rgba(0,0,0,0.4); padding-top: 20px;" onclick="facebook()">Facebook</div>
+      <div onclick="tiktok()">Tiktok</div>
+      <div onclick="email()">Email</div>
+      <div onclick="github()">Github</div>
+    </div>
+  </div>
+  <div class="circle"><img src="avatar.jpg" alt="" id="avt"></div>
+  <div class="main">
+    <h1 class=title onclick="an()">HoanKYAK</h1>
+    <div id="clock" style="font-weight: bold">00:00:00</div>
+    <h4 id="sc-text">SoundCloud Downloader</h4>
+    <input type="text" placeholder="link here..." id="text">
+    <button onclick="layLink()" id="bt">Download</button>
+    <div class="subbar"></div>
+  </div>
+<script src="script.js"></script>
+</body>
+</html>
