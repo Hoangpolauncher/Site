@@ -1,0 +1,245 @@
+* {
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  color: white;
+}
+
+.background {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  background: linear-gradient(to bottom right, #243655, black, #133024);
+  z-index: -10;
+}
+
+.main {
+  display: grid;
+  place-content: center;
+  position: relative;
+  top: 120px;
+  background: linear-gradient(to top left, #243655, black, #133024);
+  width: max-content;
+  max-width: 90vw;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 30px;
+  z-index: 0;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+#clock {
+  margin-bottom: 30px !important;
+  font-size: small;
+  text-align: center;
+}
+
+h1, h4 {
+  text-align: center !important;
+}
+
+#bt {
+  width: max-content !important;
+  place-self: center;
+  margin-top: 10px;
+  border-radius: 15px;
+  padding: 15px 20px;
+  font-weight: bold;
+  border: 1px solid white;
+  transform: translateY(-80%);
+}
+
+#text {
+  padding: 10px;
+  padding-bottom: 50px;
+  border-radius: 15px;
+  margin-top: 5px;
+  border: 1px solid white;
+  transform: translateY(-60%);
+}
+
+.circle {
+  display: grid;
+  place-content: center;
+  position: relative;
+  top: 30px;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(to bottom, #1f47ff, #00b75c);
+  z-index: -8;
+  border-radius: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.hotbar {
+  position: sticky;
+  top: 0px;
+  width: 100vw;
+  height: 50px;
+  background: #172430;
+  z-index: 25;
+}
+
+.title {
+  transform: translateY(-200%);
+}
+
+#clock {
+  transform: translateY(-480%);
+  opacity: 0.7;
+}
+
+#sc-text{
+  transform: translateY(-230%);
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
+}
+
+#avt {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  position: relative;
+  top: 0px;
+  z-index: -7;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.subbar {
+  height: 8px;
+  width: 200px;
+  background: black;
+  z-index: 2;
+  transform: translateY(-50%) translateX(-50%);
+  position: relative;
+  left: 50%;
+  border-radius: 30px;
+  opacity: 0.5;
+  filter: brightness(0.5);
+}
+
+.hotbar-text {
+  position: relative;
+  font-weight: bold;
+  z-index: 26;
+  left: 10px;
+  top: 15px;
+  height: 100px;
+  width: 100px;
+}
+
+.hidden {
+  display: none !important;
+  pointer-events: none !important;
+}
+
+.menu-bar {
+  position: fixed;
+  right: 15px;
+  top: 15px;
+  transform: scale(1.3);
+}
+
+#menu-all {
+  background: #0e1720;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 50px;
+  position: fixed;
+  width: 100vw;
+  gap: 20px;
+  font-weight: bold;
+  backdrop-filter: blur(10px);
+}
+
+#menu-all div {
+  border-bottom: 2px solid rgba(0,0,0,0.4);
+  width: 100vw;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+#menu-all div:active {
+  text-shadow: 0 0 15px white;
+}
+
+.pyrunner {
+  margin-top: 150px;
+  background: linear-gradient(to top left, #243655, black, #133024);
+  width: 1000px;
+  max-width: 90vw;
+  padding: 10px 30px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  padding-bottom: 100px;
+}
+
+#code {
+  resize: vertical;
+  max-width: 90vw;
+  height: 200px;
+  border-radius: 5px;
+  white-space: pre;
+  padding: 20px;
+  position: relative;
+  top: 40px;
+}
+
+#run {
+  width: 75px;
+  height: 40px;
+  border-radius: 15px;
+  border: 1px solid white;
+  background: white;
+}
+
+#clear {
+  width: 75px;
+  height: 40px;
+  border-radius: 15px;
+  border: 1px solid white;
+  background: white;
+}
+
+.py-button {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+  position: relative;
+  top: 30px;
+}
+
+#output {
+  max-width: 90vw;
+  height: 100px;
+  border-radius: 5px;
+  resize: vertical;
+  padding: 20px;
+  position: relative;
+  top: 50px;
+}
+
+.subbar#py-subbar {
+  top: 90px;
+}
+
+.py-title {
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
+  transform: translateY(50%);
+}
