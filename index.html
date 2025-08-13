@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="main.css">
   <script src="https://kit.fontawesome.com/7bd9343660.js" crossorigin="anonymous"></script>
   <title>Site</title>
+  <script type="module" src="https://pyscript.net/releases/2023.12.1/core.js"></script>
 </head>
 <body>
   <div class="background"></div>
@@ -14,21 +15,69 @@
     <div class="hotbar-text" onclick="location.reload()">HoanKYAK</div>
     <div class="menu-bar" onclick="an()"><i class="fa-solid fa-bars"></i></div>
     <div id="menu-all" class="hidden">
-      <div style="border-top: 2px solid rgba(0,0,0,0.4); padding-top: 20px;" onclick="facebook()">Facebook</div>
-      <div onclick="tiktok()">Tiktok</div>
-      <div onclick="email()">Email</div>
-      <div onclick="github()">Github</div>
+      <div id="fb" style="border-top: 2px solid rgba(0,0,0,0.4); padding-top: 20px;" onclick="facebook()">Facebook</div>
+      <div id="tt" onclick="tiktok()">Tiktok</div>
+      <div id="em" onclick="email()">Email</div>
+      <div id="gh" onclick="github()">Github</div>
     </div>
   </div>
   <div class="circle"><img src="avatar.jpg" alt="" id="avt"></div>
   <div class="main">
-    <h1 class=title onclick="an()">HoanKYAK</h1>
+    <h1 class="title">HoanKYAK</h1>
     <div id="clock" style="font-weight: bold">00:00:00</div>
     <h4 id="sc-text">SoundCloud Downloader</h4>
     <input type="text" placeholder="link here..." id="text">
     <button onclick="layLink()" id="bt">Download</button>
     <div class="subbar"></div>
   </div>
+  <div class="pyrunner">
+    <h4 class="py-title">Python</h4>
+    <textarea id="code" placeholder="code here..."></textarea><br>
+    <div class="py-button">
+      <button id="run">Run</button>
+      <button id="clear">Clear Output</button>
+    </div>
+    <textarea id="output" readonly></textarea>
+    <div class="subbar" id="py-subbar"></div>
+  </div>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.28.1/full/pyodide.js"></script>
+<script type="module">
+import { loadPyodide } from "https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.mjs";
+
+let pyodide = await loadPyodide();
+
+async function runCode() {
+    const userCode = document.getElementById("code").value;
+
+    const wrapper = `
+def input(prompt=""):
+    from js import prompt as js_prompt
+    return js_prompt(prompt)
+
+import sys, io, traceback, textwrap
+buf = io.StringIO()
+try:
+    code = textwrap.dedent(${JSON.stringify(userCode)})
+    old = sys.stdout
+    sys.stdout = buf
+    exec(compile(code, "<user_code>", "exec"), {})
+except Exception:
+    buf.write("Lỗi:\\n")
+    buf.write(traceback.format_exc())
+finally:
+    try:
+        sys.stdout = old
+    except:
+        pass
+buf.getvalue()
+`;
+
+    let output = await pyodide.runPythonAsync(wrapper);
+    document.getElementById("output").value = output;
+}
+
+document.getElementById("run").addEventListener("click", runCode);
+</script>
 <script src="script.js"></script>
 </body>
 </html>

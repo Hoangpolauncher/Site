@@ -167,3 +167,79 @@ h1, h4 {
   text-align: center;
   padding-bottom: 20px;
 }
+
+#menu-all div:active {
+  text-shadow: 0 0 15px white;
+}
+
+.pyrunner {
+  margin-top: 150px;
+  background: linear-gradient(to top left, #243655, black, #133024);
+  width: 1000px;
+  max-width: 90vw;
+  padding: 10px 30px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  padding-bottom: 100px;
+}
+
+#code {
+  resize: vertical;
+  max-width: 90vw;
+  height: 200px;
+  border-radius: 5px;
+  white-space: pre;
+  padding: 20px;
+  position: relative;
+  top: 40px;
+}
+
+#run {
+  width: 75px;
+  height: 40px;
+  border-radius: 15px;
+  border: 1px solid white;
+  background: white;
+}
+
+#clear {
+  width: 75px;
+  height: 40px;
+  border-radius: 15px;
+  border: 1px solid white;
+  background: white;
+}
+
+.py-button {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+  position: relative;
+  top: 30px;
+}
+
+#output {
+  max-width: 90vw;
+  height: 100px;
+  border-radius: 5px;
+  resize: vertical;
+  padding: 20px;
+  position: relative;
+  top: 50px;
+}
+
+.subbar#py-subbar {
+  top: 90px;
+}
+
+.py-title {
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
+  transform: translateY(50%);
+}
