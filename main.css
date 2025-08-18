@@ -1,0 +1,453 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.avt {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 10px solid transparent;
+  box-shadow: 0 0 30px rgba(0,0,0,0.8);
+  background: white padding-box, linear-gradient(to right, #87acee, #5b53e5);
+  transition: 0.5s linear;
+}
+
+@keyframes avt-spin {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
+  }
+}
+
+.avt:hover {
+  filter: brightness(1.2);
+  animation: avt-spin 30s linear infinite;
+}
+
+.background {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to bottom right, #404040,  #232954, #232954);
+  z-index: -2;
+  position: fixed;
+}
+
+.main-name {
+  text-align: center;
+  margin-top: 40px;
+}
+
+#title {
+  font-family: Serif;
+  text-shadow: 0 0 10px rgba(0,0,0,0.9);
+  background: linear-gradient(to right, #87acee, #5b53e5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: brightness(1.8);
+  animation: text 5s infinite ease-in-out;
+}
+
+@keyframes text {
+  0% {
+    filter: brightness(1.8);
+  }
+  
+  50% {
+    filter: brightness(2.0);
+    text-shadow: 0 0 30px rgba(255,255,255,0.25);
+    transform: translateY(10%)
+  }
+  
+  25% {
+    filter: brightness(1.8);
+  }
+  
+  75% {
+    filter: brightness(1.9);
+    text-shadow: 0 0 10px rgba(255,255,255,0.25);
+    transform: translateY(10%)
+  }
+  
+  100% {
+    filter: brightness(1.8);
+  }
+  
+}
+
+#sub {
+  margin-top: 5px;
+  color: #5a83cc;
+  font-weight: bold;
+  font-family: Monospace;
+  text-shadow: 0 0 10px rgba(60,105,184,0.5);
+  animation: sub-am 0.5s linear infinite;
+}
+
+@keyframes sub-am {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.hotbar {
+  width: 100vw;
+  height: 50px;
+  position: fixed;
+  z-index: 10;
+  background: linear-gradient(to left, rgba(64,64,64,0.5), rgba(35,41,84,0.5), rgba(35,41,84,0.5));
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.hotbar-text {
+  position: relative;
+  top: 15px;
+  left: 10px;
+  font-family: Monospace;
+  text-shadow: 0 0 15px black;
+  background: linear-gradient(to right, #87acee, #5b53e5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: brightness(2.5);
+}
+
+#hotbar-icon {
+  position: relative;
+  top: 15px;
+  right: 10px;
+}
+
+.main-avt {
+  display: inline-block;
+  position: relative;
+  margin-top: 75px;
+}
+
+.main-avt i {
+  position: absolute;
+  scale: 1.5;
+  opacity: 0.1;
+  background: linear-gradient(to right, #87acee, #5b53e5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: brightness(1.8);
+  text-shadow: 0 0 30px white;
+  rotate: 45deg;
+}
+
+.avt-1 {
+  left: 0;
+  top: 0;
+}
+
+.avt-2 {
+  top: 0;
+  right: 5px;
+}
+
+.avt-3 {
+  top: 90%;
+  left: 0;
+}
+
+.avt-4 {
+  top: 90%;
+  right: 5px;
+}
+
+.avt-1, .avt-2, .avt-3, .avt-4 {
+  animation: avt-am 3s linear infinite;
+}
+
+@keyframes avt-am {
+  0% {
+    rotate: 45deg;
+  }
+  50% {
+    rotate: 60deg;
+    opacity: 1;
+    transform: translateX(5px);
+  }
+  100% {
+    rotate: 45deg;
+    transform: translateY(5px);
+  }
+}
+
+
+.heading {
+  text-align: center;
+  width: 300px;
+  margin-top: 40px;
+  font-family: Monospace;
+  color: rgba(255,255,255,0.9);
+  text-shadow: 0 0 15px black;
+  opacity: 0.5;
+  mix-blend-mode: overlay;
+  animation: heading-am 2s linear infinite;
+}
+
+@keyframes heading-am {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes icon-am {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+    rotate: -5deg;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+.info-box {
+  background: linear-gradient(to bottom right, #2e2c44,  #232954, #232954);
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.2);
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  transition: 1s ease-in;
+}
+.about-text {
+  margin-top: 50px;
+  text-align: center;
+  filter: brightness(2);
+  font-family: Serif;
+  text-shadow: 0 0 15px rgba(0,0,0,0.8);
+  background: linear-gradient(to right, #87acee, #5b53e5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: text 3s linear Infinite;
+}
+
+.name, .date, .location, .language{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 13px;
+  font-family: Monospace;
+  opacity: 0.8;
+}
+
+.subbar {
+  width: 130px;
+  height: 5px;
+  border-radius: 10px;
+  background: linear-gradient(to right, #f6caff, #6974da);
+  animation: subbar-exit 2s ease-in-out Infinite;
+}
+
+@keyframes subbar-exit {
+  0% {
+    width: 130px;
+  }
+  50% {
+    width: 125px;
+    opacity: 0.5;
+  }
+  100% {
+    width: 130px;
+  }
+}
+
+.info-title {
+  display: flex;
+  flex-direction: row;
+  gap: 10px
+}
+
+.info-title-text {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.info-title-icon {
+  position: relative;
+  top: 4px;
+  background: linear-gradient(to right, #87acee, #5b53e5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bio-box {
+  background: linear-gradient(to bottom right, #2e2c44, #232954,  #232954, #232954);
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.2);
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s ease-in-out;
+}
+
+.bio-title {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.bio-title-text {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.bio-title-icon {
+  position: relative;
+  top: 4px;
+  background: linear-gradient(to right, #87acee, #5b53e5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bio-data-1, .bio-data-2 {
+  margin-top: 20px;
+  justify-content: space-between;
+  font-size: 13px;
+  font-family: Monospace;
+  opacity: 0.8;
+}
+
+.info-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 50px
+}
+.learning-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+.contact {
+  display: flex;
+  flex-direction: row;
+  margin-top: 25px;
+  gap: 10px;
+  margin-bottom: 150px;
+}
+@media (max-width: 768px) {
+  .info-grid, .learning-grid {
+    flex-direction: column;
+    gap: 0;
+  }
+  .contact {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.bio-box:hover {
+  filter: brightness(1.2);
+}
+.info-box:hover {
+  filter: brightness(1.2);
+}
+
+.python, .html {
+  background: linear-gradient(to bottom right, #2e2c44, #232954,  #232954, #232954);
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.2);
+  width: 300px;
+  text-align: center;
+}
+
+.python-icon, .html-icon {
+  font-size: 30px;
+  background: linear-gradient(to right, #f6caff, #6974da);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  padding: 15px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: icon-am 5s linear infinite;
+}
+
+.python-title, .html-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 15px;
+  animation: text 2s linear infinite;
+}
+
+.python-sub, .html-sub {
+  font-size: 13px;
+  font-family: monospace;
+  opacity: 0.8;
+  margin-top: 10px;
+}
+
+.python:hover, .html:hover {
+  filter: brightness(1.2);
+}
+
+.facebook, .tiktok, .github, .email {
+  display: flex;
+  flex-direction: row;
+  background: linear-gradient(to bottom right, #2e2c44, #232954,  #232954, #232954);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.2);
+  width: 150px;
+}
+
+
+.contact-line-1, .contact-line-2 {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.facebook h4, .tiktok h4, .github h4, .email h4 {
+  font-family: Monospace;
+  margin-left: 10px;
+}
+
+.facebook i, .tiktok i, .github i, .email i {
+  background: linear-gradient(to right, #87acee, #5b53e5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.facebook:hover, .tiktok:hover, .github:hover, .email:hover {
+  filter: brightness(1.2);
+}
